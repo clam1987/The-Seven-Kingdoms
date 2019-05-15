@@ -17,10 +17,10 @@ class Home extends Component {
           {/* <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> */}
           <img src="https://ak4.picdn.net/shutterstock/videos/12265754/thumb/1.jpg" alt="home" className="responsive"></img>
           </div>
-          <Button />
-          <Button />
-          <Button />
-          <Button />
+          <Button name={"Shop"} style={"round-button-circle"}/>
+          <Button name={"Stats"} style={"round-button-circle"}/>
+          <Button name={"Inventory"} style={"round-button-circle"}/>
+          <Button name={"Quest"} style={"round-button-circle"}/>
         </div>
       </div>
     )

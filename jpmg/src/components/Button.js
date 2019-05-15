@@ -9,7 +9,7 @@ class Button extends Component {
     return (
       <div className="group">
         <div className="round-button" onClick={console.log("Hello")}>
-          <div class="round-button-circle"><a href="http://example.com" class="round-button">SHOP</a>
+          <div class={this.props.style}><a href="#" class="round-button">{this.props.name}</a>
           </div>
         </div>
       </div>

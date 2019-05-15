@@ -11,7 +11,7 @@ class Login extends Component {
       //fill with login stuff added button as placeholder
       <div className="Login">
         <h2>This is where you login</h2>
-        <Button />
+        <Button name={"Login"} style={"round-button-circle"}/>
       </div>
     )
   }
