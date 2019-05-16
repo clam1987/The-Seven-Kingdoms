@@ -11,6 +11,8 @@ import Shop from "./components/pages/Shop";
 import Stats from "./components/pages/Stats";
 import Home from "./components/pages/Home";
 
+
+
 import './App.css';
 
 class App extends Component {
@@ -31,6 +33,7 @@ class App extends Component {
           <Route exact path="/quest" component={Quest} />
           <Route exact path="/shop" component={Shop} />
           <Route exact path="/stats" component={Stats} />
+
           <Footer />
         </div>
       </Router>
