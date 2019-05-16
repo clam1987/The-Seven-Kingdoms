@@ -3,17 +3,17 @@ const mongoose = require("mongoose");
 
 let Schema = mongoose.Schema;
 
-let ItemSchema = new Schema({
-    item: {
+let MonsterSchema = new Schema({
+    Monster: {
         name: String,
+        hp: Int,
         str: Int,
         def: Int,
         spd: Int,
-        cost: Int,
-        qty: Int
+        gold: Int,
     }
 });
 
-let Item = mongoose.model("Items", ItemSchema);
+let Monster = mongoose.model("Monsters", MonsterSchema);
 
-module.exports = Item;
+module.exports = Monster;

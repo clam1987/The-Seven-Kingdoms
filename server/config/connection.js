@@ -1,6 +1,3 @@
-const mongoose = require("mongoose");
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/jwt-fun", {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-});
+module.exports = {
+    MongoURI: "mongodb://localhost:27017/userid"
+}
