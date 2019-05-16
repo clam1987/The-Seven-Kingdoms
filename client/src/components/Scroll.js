@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import Button from "./Button"
 
-class Image extends Component {
-  constructor() {
-    super()
-  }
-
-  render() {
+function Scroll(props){
     return (
       //fill with Footer stuff added button as placeholder
-      <img></img>
+      <div className="ScrollBox">
+        <h2>Scroll Box</h2>
+        <Button />
+      </div>
     )
-  }
 }
 
-export default Image;
+export default Scroll;

@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import Button from "./Button"
 
-class TextBox extends Component {
-  constructor() {
-    super()
-  }
-
-  render() {
+function TextBox(props){
     return (
       //fill with Footer stuff added button as placeholder
       <div className="TextBox">
@@ -14,7 +9,6 @@ class TextBox extends Component {
         <Button />
       </div>
     )
-  }
 }
 
 export default TextBox;

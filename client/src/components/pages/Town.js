@@ -3,14 +3,11 @@ import Button from "../Button"
 
 //moved this into pages folder and did minor "restructure"
 
-class Home extends Component {
-  constructor() {
-    super()
-  }
+class Town extends Component {
 
   render() {
     return (
-      <div className="Home">
+      <div className="Town">
         <div className="container">
           <div className="jumbotron">
           <h1 className="display-4">Game Title</h1>
@@ -27,4 +24,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Town;

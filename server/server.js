@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
-
+const path = require('path');
 // Passport config
 require("./controllers/user")(passport);
 
@@ -48,8 +48,11 @@ app.use((req, res, next) => {
 
 
 // Routes
-app.use("/", require("./routes/html"));
 app.use("/users", require("./routes/user"));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/public/index.html'));
+})
 
 // Connection to Localhost
 app.listen(PORT, function() {
