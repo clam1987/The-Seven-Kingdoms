@@ -11,7 +11,7 @@ class Stats extends Component {
       //fill with stats stuff added button as placeholder
       <div className="Stats">
         <h2>This is where you see yo stats bruh</h2>
-        <Button />
+        <Button name={"Stats"} style={"round-button-circle"}/>
       </div>
     )
   }

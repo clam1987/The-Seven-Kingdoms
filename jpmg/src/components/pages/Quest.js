@@ -11,7 +11,7 @@ class Quest extends Component {
       //fill with quest stuff added button as placeholder
       <div className="Quest">
         <h2>This is where you pick yo quests</h2>
-        <Button />
+        <Button name={"Select"} style={"round-button-circle"} />
       </div>
     )
   }

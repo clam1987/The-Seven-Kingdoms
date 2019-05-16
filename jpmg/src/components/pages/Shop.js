@@ -11,7 +11,7 @@ class Shop extends Component {
       //fill with shop stuff added button as placeholder
       <div className="Shop">
         <h2>This is where you buy stuffs</h2>
-        <Button />
+        <Button name={"Buy"} style={"round-button-circle"}/>
       </div>
     )
   }

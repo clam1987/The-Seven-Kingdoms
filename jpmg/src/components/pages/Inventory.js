@@ -11,7 +11,7 @@ class Inventory extends Component {
       //fill with Inventory stuff added button as placeholder
       <div className="Inventory">
         <h2>This is where you see your items!</h2>
-        <Button />
+        <Button name={"Equip"} style={"round-button-circle"}/>
       </div>
     )
   }
