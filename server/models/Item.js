@@ -5,7 +5,7 @@ let Schema = mongoose.Schema;
 
 let ItemSchema = new Schema({
     item: {
-        type: String,
+        name: String,
         str: Int,
         def: Int,
         spd: Int,
@@ -14,6 +14,6 @@ let ItemSchema = new Schema({
     }
 });
 
-let Item = mongoose.model("Itemdb", ItemSchema);
+let Item = mongoose.model("Items", ItemSchema);
 
 module.exports = Item;
