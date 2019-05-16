@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import Button from "./Button"
 
-class Footer extends Component {
-  constructor() {
-    super()
-  }
-
-  render() {
+function Footer(props){
     return (
       //fill with Footer stuff added button as placeholder
       <div className="Footer">
@@ -14,7 +9,6 @@ class Footer extends Component {
         <Button name={"Logout"} style={"round-button-circle"}/>
       </div>
     )
-  }
 }
 
 export default Footer;

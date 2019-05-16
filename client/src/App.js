@@ -9,27 +9,23 @@ import Login from "./components/pages/Login";
 import Quest from "./components/pages/Quest";
 import Shop from "./components/pages/Shop";
 import Stats from "./components/pages/Stats";
-import Home from "./components/pages/Home";
-
-
+import Town from "./components/pages/Town";
 
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super()
-  }
 
   render() {
     return (
       <Router>
         <div>
           <Nav />
-          <Route exact path="/" component={Home} />
+
+          <Route exact path="/" component={Login} />
           <Route exact path="/battle" component={Battle} />
           <Route exact path="/character" component={Character} />
           <Route exact path="/inventory" component={Inventory} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/town" component={Town} />
           <Route exact path="/quest" component={Quest} />
           <Route exact path="/shop" component={Shop} />
           <Route exact path="/stats" component={Stats} />

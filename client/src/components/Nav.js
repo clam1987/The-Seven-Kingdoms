@@ -3,12 +3,7 @@ import Button from "./Button"
 import { Link } from "react-router-dom";
 
 
-class Nav extends Component {
-  constructor() {
-    super()
-  }
-
-  render() {
+function Nav(props){
     return (
       <ul className="nav nav-tabs">
         <li className="nav-item">
@@ -68,7 +63,6 @@ class Nav extends Component {
         </li>
       </ul>
     );
-  }
 }
 
 export default Nav;

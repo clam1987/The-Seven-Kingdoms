@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import Button from "../Button"
+import Button from "../Button";
+import axios from 'axios';
 
 class Battle extends Component {
-  constructor() {
-    super()
-  }
+  state = {}
 
   render() {
     return (

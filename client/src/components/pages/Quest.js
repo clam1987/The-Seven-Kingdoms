@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import Button from "../Button"
 
 class Quest extends Component {
-  constructor() {
-    super()
-  }
+
 
   render() {
     return (

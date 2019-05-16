@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import Button from "../Button"
 
 class Enter extends Component {
-  constructor() {
-    super()
-  }
-  
+
   render() {
     return (
       //fill with battle stuff added button as placeholder

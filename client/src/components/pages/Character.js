@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import Button from "../Button"
 
 class Character extends Component {
-  constructor() {
-    super()
-  }
 
   render() {
     return (
