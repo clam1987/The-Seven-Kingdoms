@@ -1,0 +1,83 @@
+.displayLogin {
+    color: #fff8be;
+    font-family: 'Cinzel', serif;
+    font-size: 100px;
+}
+
+.loginOne {
+    margin-top: 40px;
+    font-family: 'Raleway', sans-serif;
+}
+.loginTwo{
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-family: 'Cinzel', serif;
+
+}
+.Login {
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.form-text {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 25px;
+}
+
+button {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+
+}
+
+.ribbon {
+    font-size: 20px !important;
+    /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+    color: #fff8be;
+    font-family: 'Cinzel', serif;
+    width: 80%;
+       
+    position: relative;
+    background: #fff8be;
+    color: #1b0d0b;
+    text-align: center;
+    padding: 1em 2em; /* Adjust to suit */
+    margin: 4em auto 1.2em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+   }
+   .ribbon:before, .ribbon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -1em;
+    border: 1.5em solid #fff8be;
+    z-index: -1;
+   }
+   .ribbon:before {
+    left: -2em;
+    border-right-width: 1.5em;
+    border-left-color: transparent;
+   }
+   .ribbon:after {
+    right: -2em;
+    border-left-width: 1.5em;
+    border-right-color: transparent;
+   }
+   .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #fff8be transparent transparent transparent;
+    bottom: -1em;
+   }
+   .ribbon .ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+   }
+   .ribbon .ribbon-content:after {
+    right: 0;
+    border-width: 1em 1em 0 0;
+   }

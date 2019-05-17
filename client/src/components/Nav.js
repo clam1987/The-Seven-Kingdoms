@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import Button from "./Button"
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 
 function Nav(props){
     return (
+
+      <nav class="navbar navbar-light" style={{backgroundColor: "white"}}>
       <ul className="nav nav-tabs">
         <li className="nav-item">
+  
           <Link
           to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Login
@@ -68,6 +72,7 @@ function Nav(props){
           </Link>
         </li>
       </ul>
+      </nav>
     );
 }
 

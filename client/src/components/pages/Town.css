@@ -1,0 +1,24 @@
+.display {
+    color: #fff8be;
+    font-family: 'Cinzel', serif;
+    font-size: 100px;
+}
+
+.responsive {
+        width: 100%;
+        height: auto;
+}
+
+.button {
+    padding: 30px;
+    margin-top: 20px;
+    font-family: 'Cinzel', serif;
+
+
+}
+
+Button {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+
+}
