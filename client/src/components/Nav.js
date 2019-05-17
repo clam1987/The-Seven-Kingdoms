@@ -14,6 +14,12 @@ function Nav(props){
         </li>
         <li className="nav-item">
           <Link
+          to="/signup" className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
+          Signup
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
           to="/battle"
           className={window.location.pathname === "/battle" ? "nav-link active" : "nav-link"}>
           Battle

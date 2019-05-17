@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "../Button";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -22,17 +23,18 @@ class Login extends Component {
 
   formInvalid = () => !(this.state.password && this.state.email);
 
-
   render() {
     return (
-      //fill with login stuff added button as placeholder
+      //STYLE IT UP!
       <div className="Login">
-        <h2>This is where you login</h2>
+        <h2>Login with your email and password!</h2>
+        <h3>No account yet? Click below to signup!</h3>
+        <Link to="/signup"><Button name="Create Account"/></Link>
         <input type="text" value={this.state.email} onChange={this.handleChange}
-        name="email" placeholder="email"/>
-        <input type="text" value={this.state.password} onChange={this.handleChange}
-        name="password" placeholder="password"/>
-        <Button disabled={this.formInvalid()} callback={this.handleSubmit} name="Login" style={"round-button-circle"}/>
+        name="email" placeholder="Email"/>
+        <input type="password" value={this.state.password} onChange={this.handleChange}
+        name="password" placeholder="Password"/>
+        <Button disabled={this.formInvalid()} callback={this.handleSubmit} name="Login" />
       </div>
     )
   }
