@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Button from "../Button"
+import { Link } from "react-router-dom";
 
 class Stats extends Component {
 
@@ -8,7 +9,7 @@ class Stats extends Component {
       //fill with stats stuff added button as placeholder
       <div className="Stats">
         <h2>This is where you see yo stats bruh</h2>
-        <Button name={"Stats"} style={"round-button-circle"}/>
+        <Link to="/town"><Button name="Back to Town"/></Link>
       </div>
     )
   }

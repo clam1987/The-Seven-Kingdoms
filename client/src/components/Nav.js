@@ -9,7 +9,13 @@ function Nav(props){
         <li className="nav-item">
           <Link
           to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
-          Home
+          Login
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+          to="/signup" className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
+          Signup
           </Link>
         </li>
         <li className="nav-item">
@@ -35,9 +41,9 @@ function Nav(props){
         </li>
         <li className="nav-item">
           <Link
-          to="/login"
-          className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
-          Login
+          to="/town"
+          className={window.location.pathname === "/town" ? "nav-link active" : "nav-link"}>
+          Town
           </Link>
         </li>
         <li className="nav-item">

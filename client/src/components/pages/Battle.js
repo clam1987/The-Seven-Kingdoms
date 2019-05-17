@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "../Button";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 class Battle extends Component {
   state = {}

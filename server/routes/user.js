@@ -8,7 +8,6 @@ const User = require("../models/User");
 
 // Login Handle
 router.post("/login", (req, res, next) => {
-  console.log('hit login');
   passport.authenticate("local", {
     successRedirect: "/dashboard",
     failureRedirect: "/users/login",
@@ -19,6 +18,7 @@ router.post("/login", (req, res, next) => {
 // Post Routes
 // SignUp Hanlder
 router.post("/signup", (req, res) => {
+  console.log('hit signup');
   const {
     name,
     email,
