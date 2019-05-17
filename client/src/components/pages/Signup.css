@@ -1,0 +1,26 @@
+.displayLogin {
+    color: #fff8be;
+    font-family: 'Cinzel', serif;
+    font-size: 70px;
+}
+
+.create {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-family: 'Cinzel', serif;
+}
+
+
+
+Button {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+
+}
+
+.form {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
