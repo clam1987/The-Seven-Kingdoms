@@ -6,6 +6,8 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
 const path = require('path');
+// const cookieParser = require("cookie-parser");
+
 // Passport config
 require("./controllers/user")(passport);
 

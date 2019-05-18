@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Button from "../Button"
+import Button from "../../Button/Button"
 import { Link } from "react-router-dom";
-import inventory from "../../shopStock";
-import Items from "../Items";
+import inventory from "../../../shopStock";
+import Items from "../../Item/Items";
 
 class Shop extends Component {
   state = {

@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import Battle from "./components/pages/Battle";
-import Character from "./components/pages/Character";
-import Inventory from "./components/pages/Inventory";
-import Login from "./components/pages/Login";
-import Signup from "./components/pages/Signup";
-import Quest from "./components/pages/Quest";
-import Shop from "./components/pages/Shop";
-import Stats from "./components/pages/Stats";
-import Town from "./components/pages/Town";
-import Enter from "./components/pages/Enter";
+import Nav from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer";
+import Battle from "./components/pages/Battle/Battle";
+import Character from "./components/pages/Character/Character";
+import Inventory from "./components/pages/Inventory/Inventory";
+import Login from "./components/pages/Login/Login";
+import Signup from "./components/pages/Signup/Signup";
+import Quest from "./components/pages/Quest/Quest";
+import Shop from "./components/pages/Shop/Shop";
+import Stats from "./components/pages/Stats/Stats";
+import Town from "./components/pages/Town/Town";
+import Enter from "./components/pages/Enter/Enter";
 
 import './App.css';
 

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Button from "../Button"
+import Button from "../../Button/Button"
 import { Link } from "react-router-dom";
-import StatsInfo from "../../StatsInfo";
-import StatsList from "../StatsList/StatsList"
+import StatsInfo from "../../../StatsInfo";
+import StatsList from "../../StatsList/StatsList"
 import "./Stats.css";
 
 

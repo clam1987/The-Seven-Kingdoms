@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import Button from "../Button";
+import Button from "../../Button/Button";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import "./Signup.css";
+import { expression } from "@babel/template";
+
 
 
 class Signup extends Component {
@@ -41,6 +43,9 @@ class Signup extends Component {
    <strong class="ribbon-content">Create an account and Name your character!</strong>
 </h1>
           {/* <h2 className="create">Create an account and Name your character!</h2> */}
+          
+          
+          
           <div className="form">
             <div className="form-group">
               <input type="text" value={this.state.name} onChange={this.handleChange} name="name" placeholder="Character Name" />
@@ -51,7 +56,8 @@ class Signup extends Component {
               <input type="password" value={this.state.password2} onChange={this.handleChange} name="password2" placeholder="Re-enter password" />
             </div>
             </div>
-            <Button disabled={this.formInvalid()} callback={this.handleSubmit} name="Signup" />
+            <button type="submit" className="btn btn-warning" onClick={this.handleSubmit}>Sign Up</button>
+            {/* <Button disabled={this.formInvalid()} callback={this.handleSubmit} name="Signup" /> */}
           </div>
         </div>
      
