@@ -6,6 +6,9 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
 const path = require('path');
+// const bodyParser = require("body-parser");
+// const cookieParser = require("cookie-parser");
+
 // Passport config
 require("./controllers/user")(passport);
 
@@ -19,9 +22,14 @@ mongoose.connect(db , { useNewUrlParser: true })
 .catch(err => console.log(err));
 
 // BodyParser
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
+// app.use(bodyParser.urlencoded({
+//   extended: true
+// }));
 
-// Express Session MiddleWare
+app.use(express.json());
+
+// // Express Session MiddleWare
 // app.set("trust proxy", 1) // trust first proxy
 app.use(session({
     secret: "secret",

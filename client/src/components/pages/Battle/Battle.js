@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Button from "../Button";
+import Button from "../../Button/Button";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import player from "../../players";
-import monster from "../../monsters";
+import player from "../../../players";
+import monster from "../../../monsters";
 import "./Battle.css";
 
 

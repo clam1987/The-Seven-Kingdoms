@@ -6,11 +6,11 @@ let Schema = mongoose.Schema;
 let MonsterSchema = new Schema({
     Monster: {
         name: String,
-        hp: Int,
-        str: Int,
-        def: Int,
-        spd: Int,
-        gold: Int,
+        hp: Number,
+        str: Number,
+        def: Number,
+        spd: Number,
+        gold: Number
     }
 });
 
