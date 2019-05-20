@@ -12,9 +12,8 @@ class Login extends Component {
 
   handleSubmit = () => {
     axios
-      .post("users/login", this.state)
+      .post("/users/login", this.state)
       .then(users => {
-        console.log("hit");
         console.log(users);
       })
       .catch(err => {

@@ -1,8 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const passport = require("passport");
+const passport = require("passport"),
+LocalStrategy = require('passport-local');
 const bodyParser = require("body-parser");
+
+passport.use(new LocalStrategy(
+  function(email, password, done) {
+    User.findOne({ email: email }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
 
 //Routers
 router.use(bodyParser.urlencoded({ extended: true }))
@@ -13,11 +29,21 @@ const User = require("../models/User");
 // Login Handle
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", {
-    successRedirect: "/character",
-    failureRedirect: "/login",
+    successRedirect: "/users/authenticated",
+    failureRedirect: "/users/unauthenticated",
     failureFlash: true
   })(req, res, next);
 });
+
+router.get("/authenticated", (req, res) => {
+  console.log(req.user);
+  res.send("success");
+})
+
+router.get("/unauthenticated", (req, res) => {
+  res.redirect("/");
+})
+
 
 // Post Routes
 // SignUp Hanlder
@@ -113,7 +139,7 @@ router.post("/signup", (req, res) => {
             newUser.save()
               .then(user => {
                 req.flash("sucess_msg", "You are now registered");
-                res.redirect("/users/login");
+                res.redirect("/");
               })
               .catch(err => console.log(err));
 

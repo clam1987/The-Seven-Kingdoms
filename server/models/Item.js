@@ -6,11 +6,11 @@ let Schema = mongoose.Schema;
 let ItemSchema = new Schema({
     item: {
         name: String,
-        str: Int,
-        def: Int,
-        spd: Int,
-        cost: Int,
-        qty: Int
+        str: Number,
+        def: Number,
+        spd: Number,
+        cost: Number,
+        qty: Number
     }
 });
 

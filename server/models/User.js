@@ -3,8 +3,44 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const mongoose = require("mongoose");
+const Character = require("./Character");
 
 let Schema = mongoose.Schema;
+
+let ItemSchema = new Schema({
+    item: {
+        name: String,
+        str: Number,
+        def: Number,
+        spd: Number,
+        cost: Number,
+        qty: Number
+    }
+});
+
+
+let QuestSchema = new Schema({
+    quest: {
+        name: String,
+        description: String,
+        boolean: false,
+    }
+});
+
+
+let CharacterSchema = new Schema({
+    Character: {
+        name: String,
+        hp: Number,
+        str: Number,
+        def: Number,
+        spd: Number,
+        gold: Number,
+        quest: [QuestSchema],
+        item: [ItemSchema]
+
+    }
+});
 
 const UserSchema = new Schema({
     name: {
@@ -23,6 +59,7 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    character: [CharacterSchema],
 });
 
 
