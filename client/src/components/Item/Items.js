@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Button from "../Button/Button";
+import "./Item.css";
 
 const Items = props => {
   return (
-    <div className="Items">
+    <div className="ItemButton">
       <ul>
         <p>{props.stock.name} - {props.stock.price} G</p>
         <p>{props.stock.info}</p>

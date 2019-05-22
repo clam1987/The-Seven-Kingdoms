@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import player from "../../../players";
 import monster from "../../../monsters";
+import TextBox from "../../TextBox/TextBox"
+
 import "./Battle.css";
 
 
@@ -292,14 +294,17 @@ class Battle extends Component {
     return (
       <div className="Battle">
       <div className="jumbotron" style={{backgroundColor: "#1b0d0b"}}>
-      <img src="https://perezhilton.com/wp-content/uploads/2016/05/game-of-thrones-nights-king.gif" alt="home2" className="responsive"></img>
+      <img src="https://perezhilton.com/wp-content/uploads/2016/05/game-of-thrones-nights-king.gif" alt="home2" id="responsive" className="responsive"></img>
 
           <h1 className="displayBattle">Battle</h1>
           <h2 className="quote">What do we say to the God of Death? Not today.</h2>
           {/* <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> */}
         {/* <Button name={"Fight"} style={"round-button-circle"}/> */}
+        <TextBox />
+
         <Button name={"Fight"} callback={() => {this.battle(player[0], monster[0])}} />
       </div>
+
       </div>
     )
   }
