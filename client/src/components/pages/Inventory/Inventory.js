@@ -2,11 +2,18 @@ import React, { Component } from "react";
 import Button from "../../Button/Button"
 import { Link } from "react-router-dom";
 import "./Inventory.css";
+import Cards from "../../Cards";
+import inventoryStock from "../../../inventoryStock";
+
 
 
 class Inventory extends Component {
-
+state= {
+  inv: inventoryStock,
+}
   render() {
+    const stock = this.state.inv.map(item => <Cards key={item.id} stock={item} />);
+
     return (
       //fill with Inventory stuff added button as placeholder
       <div className="Inventory">
@@ -17,18 +24,15 @@ class Inventory extends Component {
         
       </div>
       <div className="container">
-  <div className="row">
-    <div className="col">
-    <img src="https://media.moddb.com/images/mods/1/35/34192/inventory.png" alt="home2" className=""></img>
-    </div>
-    <div className="col">
+
+    {/* <img src="https://media.moddb.com/images/mods/1/35/34192/inventory.png" alt="home2" className=""></img> */}
     <h1 className="ribbon" id="ribbonOne">
    <strong className="ribbon-content">Inventory</strong>
 </h1>
-    {/* <h2 className="quote2">Inventory</h2> */}
 
-      <h3 className="textInv">
+{stock}
 
+{/* 
 <ul>
   <li>Weapon</li>
   <li>Armor</li>
@@ -39,14 +43,12 @@ class Inventory extends Component {
   <li>Scrolls</li>
   <li>Potion</li>
   
-</ul>
-</h3>
-      <Button name={"Equip"} style={"round-button-circle"}/>
+</ul> */}
+      {/* <Button name={"Equip"} style={"round-button-circle"}/> */}
 
     </div>
   </div>
-      </div>
-      </div>
+
       
       
     )

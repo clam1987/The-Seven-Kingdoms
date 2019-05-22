@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import Button from "../../Button/Button"
 import { Link } from "react-router-dom";
+import TextBox from "../../TextBox/TextBox"
 import "./Town.css";
+
+
+
 
 class Town extends Component {
 
@@ -18,11 +22,13 @@ class Town extends Component {
           <Link to="/stats"><Button name="Stats"/></Link>
           <Link to="/quest"><Button name="Quests"/></Link>
           </div>
+          <TextBox />
           </div>
         </div>
       
     )
   }
 }
+
 
 export default Town;

@@ -2,11 +2,21 @@
     color: #fff8be;
     font-family: 'Cinzel', serif;
     font-size: 100px;
+    text-shadow: 1.5px 1.5px #d2a53a;
+
 }
 
 .responsive {
         width: 100%;
         height: auto;
+        margin-top: 10px;
+        border-radius: 15px; 
+        border: 5.5px ridge #e5aa47;      
+
+
+
+    
+
 }
 
 .button {
@@ -21,4 +31,11 @@ Button {
     font-family: 'Cinzel', serif;
     font-size: 26px;
 
+}
+
+.displayChar {
+    color: #fff8be;
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    text-shadow: 1px 1px #d2a53a;
 }

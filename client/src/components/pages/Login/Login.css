@@ -2,6 +2,8 @@
     color: #fff8be;
     font-family: 'Cinzel', serif;
     font-size: 100px;
+    color: #fff;
+ 
 }
 
 .loginOne {
@@ -36,12 +38,12 @@ button {
 .ribbon {
     font-size: 20px !important;
     /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
-    color: #fff8be;
+    color: #ebb65a;
     font-family: 'Cinzel', serif;
     width: 80%;
        
     position: relative;
-    background: #fff8be;
+    background: #e5aa47;
     color: #1b0d0b;
     text-align: center;
     padding: 1em 2em; /* Adjust to suit */
@@ -52,7 +54,7 @@ button {
     position: absolute;
     display: block;
     bottom: -1em;
-    border: 1.5em solid #fff8be;
+    border: 1.5em solid #e8ba6b;
     z-index: -1;
    }
    .ribbon:before {
@@ -70,7 +72,7 @@ button {
     position: absolute;
     display: block;
     border-style: solid;
-    border-color: #fff8be transparent transparent transparent;
+    border-color: #e8ba6b transparent transparent transparent;
     bottom: -1em;
    }
    .ribbon .ribbon-content:before {
