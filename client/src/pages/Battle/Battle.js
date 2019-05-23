@@ -5,6 +5,10 @@ import Footer from "../../components/Footer/Footer";
 import Fight from "../../components/Fight"
 import player from "../../data/player";
 import monsters from "../../data/monsters";
+import Button from "../../components/Button/Button";
+import axios from 'axios';
+import TextBox from "../../components/TextBox/TextBox"
+import "./Battle.css";
 
 class Battle extends Component {
   state = {
@@ -409,22 +413,37 @@ class Battle extends Component {
   render() {
     return (
       <div className="Battle">
-
-      <button onClick={() => {this.handleFight(this.state.monster[this.state.defeated])}}>Fight</button>
-
-      <Fight
-        round={this.state.round}
-        pHP={this.state.playerHP}
-        mHP={this.state.monsterHP}
-        pDmg={this.state.playerAttack}
-        mDmg={this.state.monsterAttack}
-        win={this.state.winner}
-        monster={this.state.monster}
-        pName={this.state.playerName}
-        killed={this.state.defeated}
-        enemy={this.state.enemy}
-      />
-
+        <div className="jumbotron" style={{backgroundColor: "#1b0d0b"}}>
+          <img src="https://perezhilton.com/wp-content/uploads/2016/05/game-of-thrones-nights-king.gif" alt="home2" id="responsive" className="responsive"></img>
+          <h1 className="displayBattle">Battle</h1>
+          <h2 className="quote">What do we say to the God of Death? Not today.</h2>
+            {/* <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> */}
+            {/* <Button name={"Fight"} style={"round-button-circle"}/> */}
+          <button onClick={() => {this.handleFight(this.state.monster[this.state.defeated])}}>Fight</button>
+          {/*<Fight
+            round={this.state.round}
+            pHP={this.state.playerHP}
+            mHP={this.state.monsterHP}
+            pDmg={this.state.playerAttack}
+            mDmg={this.state.monsterAttack}
+            win={this.state.winner}
+            monster={this.state.monster}
+            pName={this.state.playerName}
+            killed={this.state.defeated}
+            enemy={this.state.enemy}
+          />*/}
+          <TextBox
+          round={this.state.round}
+          pHP={this.state.playerHP}
+          mHP={this.state.monsterHP}
+          pDmg={this.state.playerAttack}
+          mDmg={this.state.monsterAttack}
+          win={this.state.winner}
+          monster={this.state.monster}
+          pName={this.state.playerName}
+          killed={this.state.defeated}
+          enemy={this.state.enemy} />
+        </div>
       </div>
     );
   };

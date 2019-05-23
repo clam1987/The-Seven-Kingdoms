@@ -31,7 +31,16 @@ class App extends Component {
 
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={Signup} />
-          <Switch />
+          <Route exact path="/battle" component={Battle} />
+          <Route exact path="/character" component={Character} />
+          <Route exact path="/enter" component={Enter} />
+          <Route exact path="/inventory" component={Inventory} />
+          <Route exact path="/quest" component={Quest} />
+          <Route exact path="/shop" component={Shop} />
+          <Route exact path="/stats" component={Stats} />
+          <Route exact path="/town" component={Town} />
+
+          {/*<Switch />
           <PrivateRoute path="/battle" loggedIn={this.state.loggedIn} component={Battle} />
           <PrivateRoute path="/character" loggedIn={this.state.loggedIn} component={Character} />
           <PrivateRoute path="/inventory" loggedIn={this.state.loggedIn} component={Inventory} />
@@ -39,7 +48,7 @@ class App extends Component {
           <PrivateRoute path="/quest" loggedIn={this.state.loggedIn} component={Quest} />
           <PrivateRoute path="/shop" loggedIn={this.state.loggedIn} component={Shop} />
           <PrivateRoute path="/stats" loggedIn={this.state.loggedIn} component={Stats} />
-          <PrivateRoute path="/enter" loggedIn={this.state.loggedIn} component={Enter} />
+          <PrivateRoute path="/enter" loggedIn={this.state.loggedIn} component={Enter} />*/}
 
           <Footer />
         </div>

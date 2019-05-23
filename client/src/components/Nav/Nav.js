@@ -10,7 +10,7 @@ function Nav(props){
       <nav class="navbar navbar-light" style={{backgroundColor: "white"}}>
       <ul className="nav nav-tabs">
         <li className="nav-item">
-  
+
           <Link
           to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Login
@@ -34,6 +34,13 @@ function Nav(props){
           to="/character"
           className={window.location.pathname === "/character" ? "nav-link active" : "nav-link"}>
           Character
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+          to="/enter"
+          className={window.location.pathname === "/character" ? "nav-link active" : "nav-link"}>
+          Enter
           </Link>
         </li>
         <li className="nav-item">
