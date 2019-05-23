@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../../Button/Button";
+import Button from "../../components/Button/Button";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Login.css";
@@ -31,7 +31,7 @@ class Login extends Component {
     } else {
       res.redirect("/login");
     }
-  } 
+  }
 
   handleChange = ({ target: { value, name } }) => {
     this.setState({ [name]: value })

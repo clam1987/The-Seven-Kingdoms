@@ -4,17 +4,17 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Import Components
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
-import Battle from "./components/pages/Battle/Battle";
-import Character from "./components/pages/Character/Character";
-import Inventory from "./components/pages/Inventory/Inventory";
-import Login from "./components/pages/Login/Login";
-import Signup from "./components/pages/Signup/Signup";
-import Quest from "./components/pages/Quest/Quest";
-import Shop from "./components/pages/Shop/Shop";
-import Stats from "./components/pages/Stats/Stats";
-import Town from "./components/pages/Town/Town";
-import Enter from "./components/pages/Enter/Enter";
-import PrivateRoute from "./components/pages/PrivateRoute/PrivateRoute"
+import Battle from "./pages/Battle/Battle";
+import Character from "./pages/Character/Character";
+import Inventory from "./pages/Inventory/Inventory";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import Quest from "./pages/Quest/Quest";
+import Shop from "./pages/Shop/Shop";
+import Stats from "./pages/Stats/Stats";
+import Town from "./pages/Town/Town";
+import Enter from "./pages/Enter/Enter";
+import PrivateRoute from "./pages/PrivateRoute/PrivateRoute"
 
 import './App.css';
 
@@ -28,11 +28,10 @@ class App extends Component {
       <Router>
         <div className="App">
           <Nav />
-          
+
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Switch />
-          <Route path="/" exact component={Login} />
           <PrivateRoute path="/battle" loggedIn={this.state.loggedIn} component={Battle} />
           <PrivateRoute path="/character" loggedIn={this.state.loggedIn} component={Character} />
           <PrivateRoute path="/inventory" loggedIn={this.state.loggedIn} component={Inventory} />
