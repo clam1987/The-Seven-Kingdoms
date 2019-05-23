@@ -53,7 +53,7 @@ function isLoggedIn(req, res, next) {
 
 router.get("/notlogin", (req, res) => {
   console.log(res)
-  res.redirect("/");
+  res.send("Hello");
 });
 
 

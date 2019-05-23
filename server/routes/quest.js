@@ -7,19 +7,18 @@ const bodyParser = require("body-parser");
 router.use(bodyParser.urlencoded({ extended: true }))
 
 
-const Character = require("../models/Character");
+const Quests = require("../models/Quest");
 
 // Create Character route
-router.post("/character", (req, res) => {
-  const newCharacter = new Character (req.body);
-  newCharacter.save()
-  .then(character => {
+router.post("/quests", (req, res) => {
+  const newQuest = new Quests (req.body);
+  newQuest.save()
+  .then(quest => {
     console.log("yes");
-    req.flash("sucess_msg", "Character Created");
+    req.flash("sucess_msg", "Quest Created");
     res.send("Sucess");
   })
   .catch(err => console.log(err)); 
-  console.log("Character Created");
 })
 
 module.exports = router;

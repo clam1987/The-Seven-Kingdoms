@@ -21,7 +21,17 @@ module.exports = function(passport) {
                     if(err) throw err;
 
                     if(isMatch) {
+                        passport.serializeUser((user, done) => {
+                            done(null, user.id);
+                            // console.log(user.id)
+                          });
+                          passport.deserializeUser((id, done) => {
+                            User.findById(id, (err, user) => {
+                              done(err, user);
+                            });
+                          });
                         return done(null, user);
+                        
                     } else {
                         console.log("can't find password")
                         return done(null, false, { message: "Password Incorrect" });
@@ -33,15 +43,15 @@ module.exports = function(passport) {
         })
     );
     
-    passport.serializeUser((user, done) => {
-        done(null, user.id);
-      });
+    // passport.serializeUser((user, done) => {
+    //     done(null, user.id);
+    //   });
       
-      passport.deserializeUser((id, done) => {
-        User.findById(id, (err, user) => {
-          done(err, user);
-        });
-      });
+    //   passport.deserializeUser((id, done) => {
+    //     User.findById(id, (err, user) => {
+    //       done(err, user);
+    //     });
+    //   });
 
 
 };

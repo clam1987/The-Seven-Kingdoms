@@ -65,6 +65,10 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/users", require("./routes/user"));
+app.use("/users", require("./routes/character"));
+app.use("/users", require("./routes/item"));
+app.use("/users", require("./routes/monster"));
+app.use("/users", require("./routes/quest"));
 
 app.get("/hello", function(req, res) {
   res.send("Helloworld!")
