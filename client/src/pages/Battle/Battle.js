@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
-import Fight from "../../components/Fight"
 import player from "../../data/player";
 import monsters from "../../data/monsters";
 import Button from "../../components/Button/Button";
 import axios from 'axios';
-import TextBox from "../../components/TextBox/TextBox"
+import FightBox from "../../components/TextBox/TextBox"
 import "./Battle.css";
 
 class Battle extends Component {
@@ -432,7 +431,7 @@ class Battle extends Component {
             killed={this.state.defeated}
             enemy={this.state.enemy}
           />*/}
-          <TextBox
+          <FightBox
           round={this.state.round}
           pHP={this.state.playerHP}
           mHP={this.state.monsterHP}
