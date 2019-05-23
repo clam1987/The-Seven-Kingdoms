@@ -4,11 +4,9 @@ const mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
 let QuestSchema = new Schema({
-    quest: {
         name: String,
         description: String,
-        boolean: false,
-    }
+        completed: false,
 });
 
 let Quests = mongoose.model("Quests", QuestSchema);

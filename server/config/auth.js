@@ -1,7 +1,12 @@
-module.exports = function(req ,res, next) {
+module.exports = {
+isAuthenticated: function(req ,res, next) {
+    console.log();
         if (req.isAuthenticated()) {
+            console.log("it worked!")
             return next();
-        }
+        } else {
         req.flash("error_msg", "Please login to view this page");
-        res.redirect("/users/login");
+        res.send("failed try again");
+    }
+}
 }

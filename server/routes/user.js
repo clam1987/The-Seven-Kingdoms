@@ -1,24 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const passport = require("passport"),
-LocalStrategy = require('passport-local');
+const passport = require("passport")
+// const local = require("../controllers/user");
 const bodyParser = require("body-parser");
+const { isAuthenticated } = require("../config/auth");
 
-passport.use(new LocalStrategy(
-  function(email, password, done) {
-    User.findOne({ email: email }, function (err, user) {
-      if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-    });
-  }
-));
 
 //Routers
 router.use(bodyParser.urlencoded({ extended: true }))
@@ -28,21 +15,46 @@ const User = require("../models/User");
 
 // Login Handle
 router.post("/login", (req, res, next) => {
-  passport.authenticate("local", {
-    successRedirect: "/users/authenticated",
-    failureRedirect: "/users/unauthenticated",
+  passport.authenticate("local", function(err, user, info) {
+    // console.log(user);
+    // console.log(req._passport);
+    if (err) { return next(err); }
+    if (!user) { return res.send('failed'); }
+    req.logIn(user, function(err) {
+      console.log(req._passport.session);
+      if (err) { return next(err); }
+      return res.send("sucess");
+    });
+  },
+    {
+    successRedirect: "/hello",
+    failureRedirect: "/users/notlogin",
     failureFlash: true
   })(req, res, next);
 });
 
-router.get("/authenticated", (req, res) => {
-  console.log(req.user);
-  res.send("success");
-})
 
-router.get("/unauthenticated", (req, res) => {
-  res.redirect("/");
-})
+function isLoggedIn(req, res, next) {
+  console.log(req.user);
+  if (req.user !== undefined) {
+    next();
+  } else {
+    // console.log(res)
+    res.send("failed");
+  }
+} 
+
+
+// router.get("/login", isLoggedIn, (req, res) => {
+//   console.log(isAuthenticated);
+//   console.log(req.user);
+//   res.send("success");
+// });
+
+router.get("/notlogin", (req, res) => {
+  console.log(res)
+  res.send("Hello");
+});
 
 
 // Post Routes
@@ -149,7 +161,7 @@ router.post("/signup", (req, res) => {
   }
 });
 
-router.use(require('../config/auth'));
+// router.use(require('../config/auth'));
 
 // Logout Handle
 router.get("/logout", (req, res) => {
