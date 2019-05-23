@@ -6,8 +6,14 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
 const path = require('path');
+const { isAuthenticated } = require("./config/auth");
 // const bodyParser = require("body-parser");
 // const cookieParser = require("cookie-parser");
+
+
+//dotenv config
+require("dotenv").config();
+
 
 // Passport config
 require("./controllers/user")(passport);
@@ -30,12 +36,14 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
 // // Express Session MiddleWare
-// app.set("trust proxy", 1) // trust first proxy
+app.set("trust proxy", 1) // trust first proxy
 app.use(session({
-    secret: "secret",
+    secret: process.env.SECRET,
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: true }
+    cookie: {
+      secure: true 
+    }
 }));
 
 // Passport MiddleWare
@@ -57,6 +65,10 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/users", require("./routes/user"));
+
+app.get("/hello", function(req, res) {
+  res.send("Helloworld!")
+})
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/public/index.html'));

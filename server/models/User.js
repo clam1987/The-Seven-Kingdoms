@@ -8,61 +8,50 @@ const Character = require("./Character");
 let Schema = mongoose.Schema;
 
 let ItemSchema = new Schema({
-    item: {
-        name: String,
-        str: Number,
-        def: Number,
-        spd: Number,
-        cost: Number,
-        qty: Number
-    }
+  name: String,
+  str: Number,
+  def: Number,
+  spd: Number,
+  cost: Number,
+  qty: Number
 });
-
 
 let QuestSchema = new Schema({
-    quest: {
-        name: String,
-        description: String,
-        boolean: false,
-    }
+    name: String,
+    description: String,
+    boolean: false
 });
 
-
 let CharacterSchema = new Schema({
-    Character: {
-        name: String,
-        hp: Number,
-        str: Number,
-        def: Number,
-        spd: Number,
-        gold: Number,
-        quest: [QuestSchema],
-        item: [ItemSchema]
-
-    }
+    name: String,
+    hp: Number,
+    str: Number,
+    def: Number,
+    spd: Number,
+    gold: Number,
+    quest: [QuestSchema],
+    item: [ItemSchema]
 });
 
 const UserSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    email: {
-        type: String,
-        required: true,
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: Date,
-        default: Date.now
-    },
-    character: [CharacterSchema],
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  character: [CharacterSchema]
 });
-
-
 
 const User = mongoose.model("User", UserSchema);
 

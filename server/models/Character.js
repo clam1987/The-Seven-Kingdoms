@@ -10,6 +10,7 @@ let CharacterSchema = new Schema({
         str: Number,
         def: Number,
         spd: Number,
+        lck: Number,
         gold: Number
     }
 });

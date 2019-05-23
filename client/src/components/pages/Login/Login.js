@@ -14,6 +14,9 @@ class Login extends Component {
     axios
       .post("/users/login", this.state)
       .then(users => {
+        this.setState({
+          loggedIn: true,
+        });
         console.log(users);
       })
       .catch(err => {
@@ -21,8 +24,17 @@ class Login extends Component {
       });
   };
 
+  isLoggedIn = (req, res, next) => {
+    console.log("yes");
+    if (req.session.user !== undefined) {
+      next();
+    } else {
+      res.redirect("/login");
+    }
+  } 
+
   handleChange = ({ target: { value, name } }) => {
-    this.setState({ [name]: value }, () => console.log(this.state));
+    this.setState({ [name]: value })
   };
 
   formInvalid = () => !(this.state.password && this.state.email);
