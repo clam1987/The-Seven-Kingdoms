@@ -12,7 +12,7 @@ const Monsters = require("../models/Monster");
 
 
 //Get Character Route
-app.get("/monsterinfo", (req, res) => {
+router.get("/monsterinfo", (req, res) => {
     res.send("hello")
     // const collection = db.get().collection("monsters")
     // collection.find().toArray(function(err, res) {

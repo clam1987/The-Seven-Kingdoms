@@ -12,18 +12,24 @@ router.use(bodyParser.urlencoded({ extended: true }))
 
 //User Model
 const User = require("../models/User");
+const Character = require("../models/Character")
 
 // Login Handle
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", function(err, user, info) {
     // console.log(user);
-    // console.log(req._passport);
     if (err) { return next(err); }
-    if (!user) { return res.send('failed'); }
+    if (!user) { return res.status(400).send('failed'); }
     req.logIn(user, function(err) {
-      console.log(req._passport.session);
+      // console.log(req._passport.session);
       if (err) { return next(err); }
-      return res.send("sucess");
+      User.findById(req._passport.session.user).then(user => {
+        console.log(user);
+        let { email } = user;
+        res.send(email);
+      }).catch(err => {
+        if (err) throw err;
+      })
     });
   },
     {
@@ -34,26 +40,25 @@ router.post("/login", (req, res, next) => {
 });
 
 
-function isLoggedIn(req, res, next) {
-  console.log(req.user);
-  if (req.user !== undefined) {
-    next();
-  } else {
-    // console.log(res)
-    res.send("failed");
-  }
-} 
+router.post("/login/character", (req, res) => {
+  const newCharacter = new Character (req.body);
+  newCharacter.save()
+  .then(character => {
+    console.log("yes");
+    req.flash("sucess_msg", "Character Created");
+    res.send("Sucess");
+  })
+  .catch(err => console.log(err)); 
+  console.log("Character Created");
+});
 
 
-// router.get("/login", isLoggedIn, (req, res) => {
-//   console.log(isAuthenticated);
-//   console.log(req.user);
-//   res.send("success");
-// });
+router.get("/login", (req, res, next) => {
+  res.send("success");
+});
 
 router.get("/notlogin", (req, res) => {
-  console.log(res)
-  res.send("Hello");
+  res.status(400).send("not logged in")
 });
 
 
@@ -167,7 +172,7 @@ router.post("/signup", (req, res) => {
 router.get("/logout", (req, res) => {
   req.logout();
   req.flash("sucess_msg", "You logged out sucessfully");
-  res.redirect("/users/login");
+  // res.redirect("/users/login");
 })
 
 module.exports = router;

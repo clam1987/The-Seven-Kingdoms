@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 // Routes
 router.use(bodyParser.urlencoded({ extended: true }))
 
+router.get("/models/Character")
 
 const Character = require("../models/Character");
 

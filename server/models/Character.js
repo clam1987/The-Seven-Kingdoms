@@ -10,7 +10,8 @@ let CharacterSchema = new Schema({
         def: Number,
         spd: Number,
         lck: Number,
-        gold: Number
+        gold: Number,
+        user: {type: Schema.Types.ObjectId, ref: "User"}
     
 });
 

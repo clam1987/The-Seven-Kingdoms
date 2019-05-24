@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Button from "../../components/Button/Button";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Redirect} from "react-router-dom";
 import "./Login.css";
 
 class Login extends Component {
@@ -13,11 +13,16 @@ class Login extends Component {
   handleSubmit = () => {
     axios
       .post("/users/login", this.state)
-      .then(users => {
-        this.setState({
-          loggedIn: true,
-        });
-        console.log(users);
+      .then(result => {
+        console.log(result);
+        if (result.status === 200){
+          this.props.setUserData(result.data, () => {
+            console.log(this.props)
+            return this.props.history.push("/protected/character")
+          })
+        } else {
+          console.log('ah shit here we go again')
+        }
       })
       .catch(err => {
         if (err) throw err;

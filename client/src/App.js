@@ -21,6 +21,13 @@ import './App.css';
 class App extends Component {
   state = {
     isLoggedIn: false,
+    user: null
+  }
+
+
+  setUserData = (user, cb) => {
+    this.setState({ user }, cb)
+    console.log(user);
   }
 
   render() {
