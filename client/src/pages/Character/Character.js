@@ -2,10 +2,36 @@ import React, { Component } from "react";
 import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
 import "./Character.css";
+<<<<<<< HEAD:client/src/components/pages/Character/Character.js
+import axios from "axios";
+import StatsList from "../../StatsList/StatsList";
+=======
 import stats from "../../data/player";
+>>>>>>> origin:client/src/pages/Character/Character.js
 
 
 class Character extends Component {
+  state = {
+    name: "",
+    hp: 1,
+    str: 1,
+    def: 1,
+    spd: 1,
+    lck: 1,
+    gold: 1,
+    user: ""
+  }
+
+  handleSubmit = () => {
+    axios
+      .post("/users/login/character", this.state)
+      .then(res => {
+        console.log(res)
+      .catch(err => {
+        if (err) throw err;
+      });
+  })
+};
 
   render() {
     return (
@@ -37,7 +63,7 @@ class Character extends Component {
                 <li>Experience to Next Level: 20</li>
             </ul>
         </p>
-        <p><Link to="/enter"><Button name="Select Character"/></Link>
+        <p><Link to="/enter"><Button name="Select Character" callback={this.handleSubmit}/></Link>
 </p>
       </div>
     </div>
