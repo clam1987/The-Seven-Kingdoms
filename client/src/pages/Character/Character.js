@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Button from "../../Button/Button"
+import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
 import "./Character.css";
-import StatsList from "../../StatsList/StatsList";
+import stats from "../../data/player";
 
 
 class Character extends Component {
@@ -16,7 +16,7 @@ class Character extends Component {
         <h2 className="quote">Never forget what you are. The rest of the world will not. <br />
          Wear it like armor, and it can never be used to hurt you." </h2>
           </div>
-          
+
 <div className="container">
 <div className="row">
   <div className="column">
@@ -26,7 +26,7 @@ class Character extends Component {
         <h2 className="charName">Jon Snow</h2>
         <p className="title">Lord of Winterfell</p>
         <p>
-        <ul className="listChar"> 
+        <ul className="listChar">
                 <li>Level: 10</li>
                 <li>HP: 100</li>
                 <li>Strength: 100</li>
@@ -42,7 +42,7 @@ class Character extends Component {
       </div>
     </div>
   </div>
-  
+
 
   <div className="column">
     <div className="card">
@@ -50,8 +50,8 @@ class Character extends Component {
       <div className="container" >
         <h2 className="charName">Arya Stark</h2>
         <p className="title">"No One"</p>
-        <p>          
-          <ul className="listChar"> 
+        <p>
+          <ul className="listChar">
                 <li>Level: 10</li>
                 <li>HP: 100</li>
                 <li>Strength: 100</li>
@@ -72,8 +72,8 @@ class Character extends Component {
       <div className="container">
         <h2 className="charName">Daenerys Targaryen</h2>
         <p className="title">Mother of Dragons</p>
-        <p>  
-        <ul className="listChar"> 
+        <p>
+        <ul className="listChar">
 
                 <li>Level: 10</li>
                 <li>HP: 100</li>
@@ -97,8 +97,8 @@ class Character extends Component {
       <div className="container">
         <h2 className="charName">Cersei Lannister</h2>
         <p className="title">Queen of Seven Kingdoms</p>
-        <p>  
-        <ul className="listChar"> 
+        <p>
+        <ul className="listChar">
 
                 <li>Level: 10</li>
                 <li>HP: 100</li>
@@ -114,7 +114,7 @@ class Character extends Component {
       </div>
     </div>
   </div>
-  
+
 
   <div className="column">
     <div className="card">
@@ -122,8 +122,8 @@ class Character extends Component {
       <div className="container" >
         <h2 className="charName">Sandor Clegane</h2>
         <p className="title">The Hound</p>
-        <p>  
-        <ul className="listChar"> 
+        <p>
+        <ul className="listChar">
 
                 <li>Level: 10</li>
                 <li>HP: 100</li>
@@ -145,8 +145,8 @@ class Character extends Component {
       <div className="container">
         <h2 className="charName">Bran Stark</h2>
         <p className="title">Three-eyed Raven</p>
-        <p> 
-        <ul className="listChar"> 
+        <p>
+        <ul className="listChar">
 
                 <li>Level: 10</li>
                 <li>HP: 100</li>
@@ -171,8 +171,8 @@ class Character extends Component {
       <div className="container">
         <h2 className="charName">Ygritte</h2>
         <p className="title">The Wildling</p>
-        <p>  
-        <ul className="listChar"> 
+        <p>
+        <ul className="listChar">
 
                 <li>Level: 10</li>
                 <li>HP: 100</li>
@@ -188,7 +188,7 @@ class Character extends Component {
       </div>
     </div>
   </div>
-  
+
 
   <div className="column">
     <div className="card">
@@ -196,8 +196,8 @@ class Character extends Component {
       <div className="container" >
         <h2 className="charName">Drogon</h2>
         <p className="title">The Dragon</p>
-        <p>  
-        <ul className="listChar"> 
+        <p>
+        <ul className="listChar">
 
                 <li>Level: 10</li>
                 <li>HP: 100</li>
@@ -219,8 +219,8 @@ class Character extends Component {
       <div className="container">
         <h2 className="charName">Jorah Mormont</h2>
         <p className="title">Jorah the Andal</p>
-        <p>  
-        <ul className="listChar"> 
+        <p>
+        <ul className="listChar">
 
                 <li>Level: 10</li>
                 <li>HP: 100</li>
@@ -250,7 +250,7 @@ class Character extends Component {
 
 
           {/* <div className="container">
-          
+
           <div className="row">
     <div className="col">
           <img src="https://i.imgur.com/c2oDdpm.jpg" alt="home" className="responsive" id="grey"></img>

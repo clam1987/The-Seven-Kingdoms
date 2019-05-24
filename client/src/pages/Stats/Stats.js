@@ -1,17 +1,13 @@
 import React, { Component } from "react";
-import Button from "../../Button/Button"
+import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
-import StatsInfo from "../../../StatsInfo";
-import StatsList from "../../StatsList/StatsList"
+import stats from "../../data/player";
+import StatsList from "../../components/StatsList/StatsList"
 import "./Stats.css";
-
-
-
-
 
 class Stats extends Component {
   state= {
-    stats: StatsInfo
+    stats: stats
   }
 
   render() {
@@ -29,7 +25,7 @@ class Stats extends Component {
   />
 
 
-    
+
     );
     return (
       //fill with stats stuff added button as placeholder

@@ -1,4 +1,4 @@
-const inventory = [
+const supply = [
     {
         id: "1",
         name: "Bronze Sword",
@@ -43,4 +43,4 @@ const inventory = [
     }
 ]
 
-export default inventory
+export default supply

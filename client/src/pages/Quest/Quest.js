@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Button from "../../Button/Button";
-import quests from "../../../questList";
+import Button from "../../components/Button/Button";
+import quests from "../../data/questList";
 import { Link } from "react-router-dom";
-import ShowQuests from "../../ShowQuests/ShowQuests"
+import ShowQuests from "../../components/ShowQuests/ShowQuests"
 import "./Quest.css";
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Button from "../../Button/Button"
+import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
-import TextBox from "../../TextBox/TextBox"
+import TextBox from "../../components/TextBox/TextBox"
 import "./Town.css";
 
 
@@ -25,7 +25,7 @@ class Town extends Component {
           <TextBox />
           </div>
         </div>
-      
+
     )
   }
 }

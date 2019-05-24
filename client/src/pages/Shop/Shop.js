@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Button from "../../Button/Button"
+import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
-import inventory from "../../../shopStock";
-import Items from "../../Item/Items";
+import supply from "../../data/shopStock";
+import Items from "../../components/Items/Items";
 
 class Shop extends Component {
   state = {
-        inv: inventory,
+        inv: supply,
       }
 
   render() {
@@ -17,7 +17,7 @@ class Shop extends Component {
       <div className="Shop">
 <div className="jumbotron" style={{backgroundColor: "#1b0d0b"}}>
           <h1 className="displayChar">Shop</h1>
-        <h2 className="quote">Everything is better with some wine in the belly </h2>        
+        <h2 className="quote">Everything is better with some wine in the belly </h2>
         <Button name={"Buy"} style={"round-button-circle"}/>
         {stock}
 
