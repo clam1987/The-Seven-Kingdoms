@@ -18,6 +18,11 @@ class Stats extends Component {
 <div className="jumbotron" style={{backgroundColor: "#1b0d0b"}}>
           <h1 className="displayChar">Stats</h1>
         {/* <h2 className="quote">A Lannister always pays his debts </h2>       */}
+        <div>
+        <img src="https://pbs.twimg.com/profile_images/901947348699545601/hqRMHITj_400x400.jpg" alt="Jane"/>
+
+        </div>
+        
         <StatsList
         name={this.state.stat.name}
         lvl={this.state.stat.lvl}

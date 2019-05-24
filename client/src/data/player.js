@@ -1,6 +1,6 @@
 const player = {
   id: "1",
-  name: "Theon Targaryen",
+  name: "Jon Snow",
   hp: 600,
   str: 10,
   def: 9,

@@ -413,7 +413,7 @@ class Battle extends Component {
     return (
       <div className="Battle">
         <div className="jumbotron" style={{backgroundColor: "#1b0d0b"}}>
-          <img src="https://perezhilton.com/wp-content/uploads/2016/05/game-of-thrones-nights-king.gif" alt="home2" id="responsive" className="responsive"></img>
+          <img src="https://perezhilton.com/wp-content/uploads/2016/05/game-of-thrones-nights-king.gif" alt="home2" id="responsive" className="responsiveBattle"></img>
           <h1 className="displayBattle">Battle</h1>
           <h2 className="quote">What do we say to the God of Death? Not today.</h2>
             {/* <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> */}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
 import "./Town.css";
+import TextBox from "../../components/TextBox/TextBox";
 
 class Town extends Component {
 
@@ -18,7 +19,9 @@ class Town extends Component {
           <Link to="/stats"><Button name="Stats"/></Link>
           <Link to="/quest"><Button name="Quests"/></Link>
           </div>
+                    <TextBox />
                     </div>
+
         </div>
 
     )

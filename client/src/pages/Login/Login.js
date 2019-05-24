@@ -52,7 +52,7 @@ class Login extends Component {
         <img
           src="https://i.imgur.com/u3V51nO.jpg"
           alt="home"
-          className="responsive"
+          className="responsiveVh"
         />
 
         <div className="Login">

@@ -4,6 +4,17 @@
     font-size: 100px;
     color: #fff;
  
+
+}
+
+.responsiveVh {
+    /* height: 80vh;
+    width: 150vh; */
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+        border-radius: 15px; 
+        border: 5.5px ridge #e5aa47;      
 }
 
 .loginOne {
