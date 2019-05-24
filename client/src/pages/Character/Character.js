@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
 import "./Character.css";
-import axios from "axios";
-import StatsList from "../../components/StatsList/StatsList";
 import stats from "../../data/player";
+import axios from "axios";
 
 
 class Character extends Component {
