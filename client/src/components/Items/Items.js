@@ -5,11 +5,13 @@ import "./Item.css";
 const Items = props => {
   return (
     <div className="ItemButton">
-      <ul>
+      <ul id="dispItem">
         <p>{props.stock.name} - {props.stock.price} G</p>
         <p>{props.stock.info}</p>
       </ul>
-      <Button name={"Buy"} />
+      <Button callback={() => {alert("Item Bought!")}} name={"Buy"} />
+      <br />
+      <br />
     </div>
   )
 };
