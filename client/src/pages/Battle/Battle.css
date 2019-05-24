@@ -4,10 +4,12 @@
     font-size: 50px;
 }
 
-#responsive {
+.responsiveBattle {
     margin-bottom: 20px;
-        width: 100%;
-        height: auto;
+    /* height: 60vh;
+    width: 135vh; */
+    height: auto;
+    width: 100%;
         margin-top: 10px;
         border-radius: 15px; 
         border: 6px ridge #5a88a0;      
@@ -19,3 +21,6 @@
 
 }
 
+#res {
+    height: 30%;
+}

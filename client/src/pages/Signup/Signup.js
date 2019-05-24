@@ -40,7 +40,7 @@ class Signup extends Component {
       //STYLE IT UP
       <div className="jumbotron" style={{ backgroundColor: "#1b0d0b" }}>
         <h1 className="displayLogin">Winter is Coming</h1>
-        <img src="https://www.dailydot.com/wp-content/uploads/2ca/4e/fa303666dcd14120.gif" alt="home2" className="responsive"></img>
+        <img src="https://www.dailydot.com/wp-content/uploads/2ca/4e/fa303666dcd14120.gif" alt="home2" className="responsiveVh"></img>
 
         <div className="Signup">
         <h1 className="ribbon">

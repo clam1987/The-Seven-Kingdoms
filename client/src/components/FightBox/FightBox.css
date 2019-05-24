@@ -9,3 +9,55 @@
     overflow-y: scroll;
     margin-top: 20px;
 }
+
+.round {
+    font-weight: bold;
+    color: white;
+    font-size: 35px;
+
+}
+
+.enemy {
+    font-weight: bold;
+    font-size: 28px;
+
+}
+
+.theon {
+    font-weight: bold;
+    font-size: 28px;
+    border: 2px #301714 solid;
+    padding:4px;
+    border-width: 3px;
+    font-family: lato;
+text-transform: uppercase;
+letter-spacing: 1px;
+
+}
+
+.theonOne.theonTwo {
+    font-weight: bold;
+    font-size: 28px;
+    font-family: lato;
+
+   
+
+}
+
+.one {
+    padding:4px;
+   
+
+}
+.two{
+    padding: 4px;
+    color: white;
+
+
+}
+
+.win {
+    font-weight: bold;
+    padding: 4px;
+color: yellow;
+}
