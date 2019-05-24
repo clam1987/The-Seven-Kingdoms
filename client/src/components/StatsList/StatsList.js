@@ -7,15 +7,15 @@ const StatsList = (props) => {
     return (
         <div>
             <ul>
-                <li>Name: {props.name}</li>
-                <li>Level: {props.lvl}</li>
-                <li>HP: {props.hp}</li>
-                <li>Strength: {props.str}</li>
-                <li>Defense: {props.def}</li>
-                <li>Speed: {props.spd}</li>
-                <li>Gold: {props.gold}</li>
-                <li>Experience: {props.exp}</li>
-                <li>Experience to Next Level: {props.expToNextLvl}</li>
+                <p>Name: {props.name}</p>
+                <p>Level: {props.lvl}</p>
+                <p>HP: {props.hp}</p>
+                <p>Strength: {props.str}</p>
+                <p>Defense: {props.def}</p>
+                <p>Speed: {props.spd}</p>
+                <p>Gold: {props.gold}</p>
+                <p>Experience: {props.exp}</p>
+                <p>Experience to Next Level: {props.expToNextLvl}</p>
 
             </ul>
             <Link to="/battle"><Button name={"Select"} style={"round-button-circle"} questComplete={props.boolean} /></Link>

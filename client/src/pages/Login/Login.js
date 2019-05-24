@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../../Button/Button";
+import Button from "../../components/Button/Button";
 import axios from "axios";
 import { Link, Redirect} from "react-router-dom";
 import "./Login.css";
@@ -29,6 +29,14 @@ class Login extends Component {
       });
   };
 
+  isLoggedIn = (req, res, next) => {
+    console.log("yes");
+    if (req.session.user !== undefined) {
+      next();
+    } else {
+      res.redirect("/login");
+    }
+  }
 
   handleChange = ({ target: { value, name } }) => {
     this.setState({ [name]: value })

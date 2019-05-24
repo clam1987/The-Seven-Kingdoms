@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "../components/Button/Button"
+import Button from "./Button/Button"
 import { Link } from "react-router-dom";
-import "../components/pages/Inventory/Inventory.css";
+import "../pages/Inventory/Inventory.css";
 
 
 function Cards(props) {
@@ -12,10 +12,10 @@ function Cards(props) {
             {/* <Button name={"Logout"} style={"round-button-circle"}/> */}
 
             <div className="card">
-            
+
                 <img src={props.stock.img} alt="Jane" style={{ width: "100%" }} />
                 <div className="container">
-                
+
                     <h2 className="charName">{props.stock.name}</h2>
                     <p className="title">{props.stock.type}</p>
                     <p className="info">{props.stock.info}</p>

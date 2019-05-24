@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../../Button/Button";
+import Button from "../../components/Button/Button";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import "./Signup.css";
@@ -48,9 +48,9 @@ class Signup extends Component {
    <strong class="ribbon-content">Create an account and Name your character!</strong>
 </h1>
           {/* <h2 className="create">Create an account and Name your character!</h2> */}
-          
-          
-          
+
+
+
           <form onSubmit= {this.handleSubmit}className="form">
             <div className="form-group">
               <input type="text" value={this.state.name} onChange={this.handleChange} name="name" placeholder="Character Name" />
@@ -62,11 +62,11 @@ class Signup extends Component {
             </div>
             <button type="submit" className="btn btn-warning">Sign Up</button>
             </form>
-  
+
             {/* <Button disabled={this.formInvalid()} callback={this.handleSubmit} name="Signup" /> */}
           </div>
         </div>
-     
+
     )
   }
 }

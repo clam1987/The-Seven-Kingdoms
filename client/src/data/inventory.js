@@ -1,4 +1,4 @@
-const stock = [
+const items = [
     {
         id: "1",
         img: "https://pixel.nymag.com/imgs/daily/vulture/2017/08/28/thrones.w700.h700.jpg",
@@ -53,4 +53,4 @@ const stock = [
     },
 ]
 
-export default stock
+export default items
