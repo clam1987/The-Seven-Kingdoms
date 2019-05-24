@@ -21,6 +21,13 @@ import './App.css';
 class App extends Component {
   state = {
     isLoggedIn: false,
+    user: null
+  }
+
+
+  setUserData = (user, cb) => {
+    this.setState({ user }, cb)
+    console.log(user);
   }
 
   render() {
@@ -28,19 +35,18 @@ class App extends Component {
       <Router>
         <div className="App">
           <Nav />
-          
-          <Route exact path="/" component={Login} />
+          <Switch>
+          <Route exact path="/" render={props => <Login {...props} setUserData={this.setUserData}/>} />
           <Route exact path="/signup" component={Signup} />
-          <Switch />
-          <Route path="/" exact component={Login} />
-          <PrivateRoute path="/battle" loggedIn={this.state.loggedIn} component={Battle} />
-          <PrivateRoute path="/character" loggedIn={this.state.loggedIn} component={Character} />
-          <PrivateRoute path="/inventory" loggedIn={this.state.loggedIn} component={Inventory} />
-          <PrivateRoute path="/town" loggedIn={this.state.loggedIn} component={Town} />
-          <PrivateRoute path="/quest" loggedIn={this.state.loggedIn} component={Quest} />
-          <PrivateRoute path="/shop" loggedIn={this.state.loggedIn} component={Shop} />
-          <PrivateRoute path="/stats" loggedIn={this.state.loggedIn} component={Stats} />
-          <PrivateRoute path="/enter" loggedIn={this.state.loggedIn} component={Enter} />
+          <Route exact path="/protected/character" render={(props) => this.state.user ? <Character {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>
+          <Route exact path="/protected/battle" render={(props) => this.state.user ? <Battle {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>
+          <Route exact path="/protected/inventory" render={(props) => this.state.user ? <Inventory {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>          <Route exact path="/protected/character" render={(props) => this.state.user ? <Character {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>
+          <Route exact path="/protected/town" render={(props) => this.state.user ? <Town {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>
+          <Route exact path="/protected/quest" render={(props) => this.state.user ? <Quest {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>
+          <Route exact path="/protected/shop" render={(props) => this.state.user ? <Shop {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>
+          <Route exact path="/protected/stats" render={(props) => this.state.user ? <Stats {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>
+          <Route exact path="/protected/enter" render={(props) => this.state.user ? <Enter {...props}/> : <Login {...props} setUserData={this.setUserData}/> }/>
+          </Switch>  
 
           <Footer />
         </div>
