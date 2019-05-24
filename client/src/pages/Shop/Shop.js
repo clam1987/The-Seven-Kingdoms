@@ -18,7 +18,6 @@ class Shop extends Component {
 <div className="jumbotron" style={{backgroundColor: "#1b0d0b"}}>
           <h1 className="displayChar">Shop</h1>
         <h2 className="quote">Everything is better with some wine in the belly </h2>
-        <Button name={"Buy"} style={"round-button-circle"}/>
         {stock}
 
         <Link to="/town"><Button name="Back to Town"/></Link>

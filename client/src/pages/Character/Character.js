@@ -14,7 +14,7 @@ class Character extends Component {
     str: 1,
     def: 1,
     spd: 1,
-    lck: 1,
+    luk: 1,
     gold: 1,
     user: ""
   }
@@ -29,6 +29,21 @@ class Character extends Component {
       });
   })
 };
+
+handleStats = (name, hp, str, def, spd, luk, gold) => {
+  this.setState( () => {
+    return {
+      hp: hp,
+      str: str,
+      def: def,
+      spd: spd,
+      luk: luk,
+      gold: gold
+    }
+  })
+};
+
+
 
   render() {
     return (
@@ -48,20 +63,17 @@ class Character extends Component {
       <div className="container">
         <h2 className="charName">Jon Snow</h2>
         <p className="title">Lord of Winterfell</p>
-        <p>
         <ul className="listChar">
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+                <li>HP: 1000</li>
+                <li>Strength: 11</li>
+                <li>Defense: 11</li>
+                <li>Speed: 8</li>
+                <li>Luck: 7</li>
+                <li>Gold: 100</li>
             </ul>
+        <p>
+        <Link to="/enter"><Button name="Select Character" callback={() => {this.handleStats("Jon Snow", 1000, 11, 11, 8, 7, 100)}}/></Link>
         </p>
-        <p><Link to="/enter"><Button name="Select Character" callback={this.handleSubmit}/></Link>
-</p>
       </div>
     </div>
   </div>
@@ -75,14 +87,12 @@ class Character extends Component {
         <p className="title">"No One"</p>
         <p>
           <ul className="listChar">
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+          <li>HP: 800</li>
+          <li>Strength: 8</li>
+          <li>Defense: 9</li>
+          <li>Speed: 12</li>
+          <li>Luck: 8</li>
+          <li>Gold: 80</li>
             </ul></p>
         <p><Link to="/enter"><Button name="Select Character"/></Link>
 </p>
@@ -98,14 +108,12 @@ class Character extends Component {
         <p>
         <ul className="listChar">
 
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+        <li>HP: 900</li>
+        <li>Strength: 9</li>
+        <li>Defense: 10</li>
+        <li>Speed: 8</li>
+        <li>Luck: 6</li>
+        <li>Gold: 200</li>
             </ul></p>
         <p><Link to="/enter"><Button name="Select Character"/></Link>
 </p>
@@ -122,15 +130,12 @@ class Character extends Component {
         <p className="title">Queen of Seven Kingdoms</p>
         <p>
         <ul className="listChar">
-
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+        <li>HP: 1200</li>
+        <li>Strength: 9</li>
+        <li>Defense: 8</li>
+        <li>Speed: 5</li>
+        <li>Luck: 4</li>
+        <li>Gold: 250</li>
             </ul></p>
         <p><Link to="/enter"><Button name="Select Character"/></Link>
 </p>
@@ -148,14 +153,12 @@ class Character extends Component {
         <p>
         <ul className="listChar">
 
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+        <li>HP: 1300</li>
+        <li>Strength: 13</li>
+        <li>Defense: 11</li>
+        <li>Speed: 3</li>
+        <li>Luck: 3</li>
+        <li>Gold: 80</li>
             </ul></p>
         <p><Link to="/enter"><Button name="Select Character"/></Link>
 </p>
@@ -170,15 +173,12 @@ class Character extends Component {
         <p className="title">Three-eyed Raven</p>
         <p>
         <ul className="listChar">
-
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+        <li>HP: 850</li>
+        <li>Strength: 9</li>
+        <li>Defense: 8</li>
+        <li>Speed: 6</li>
+        <li>Luck: 8</li>
+        <li>Gold: 150</li>
             </ul></p>
         <p>
         <Link to="/enter"><Button name="Select Character"/></Link>
@@ -196,15 +196,12 @@ class Character extends Component {
         <p className="title">The Wildling</p>
         <p>
         <ul className="listChar">
-
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+        <li>HP: 900</li>
+        <li>Strength: 9</li>
+        <li>Defense: 9</li>
+        <li>Speed: 8</li>
+        <li>Luck: 6</li>
+        <li>Gold: 70</li>
             </ul></p>
         <p><Link to="/enter"><Button name="Select Character"/></Link>
 </p>
@@ -222,14 +219,12 @@ class Character extends Component {
         <p>
         <ul className="listChar">
 
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+        <li>HP: 1300</li>
+        <li>Strength: 13</li>
+        <li>Defense: 11</li>
+        <li>Speed: 7</li>
+        <li>Luck: 3</li>
+        <li>Gold: 50</li>
             </ul></p>
         <p><Link to="/enter"><Button name="Select Character"/></Link>
 </p>
@@ -245,14 +240,12 @@ class Character extends Component {
         <p>
         <ul className="listChar">
 
-                <li>Level: 10</li>
-                <li>HP: 100</li>
-                <li>Strength: 100</li>
-                <li>Defense: 100</li>
-                <li>Speed: 100</li>
-                <li>Gold: 10000</li>
-                <li>Experience: 50</li>
-                <li>Experience to Next Level: 20</li>
+        <li>HP: 1100</li>
+        <li>Strength: 12</li>
+        <li>Defense: 10</li>
+        <li>Speed: 6</li>
+        <li>Luck: 5</li>
+        <li>Gold: 90</li>
             </ul></p>
         <p><Link to="/enter"><Button name="Select Character"/></Link>
 </p>
@@ -261,30 +254,6 @@ class Character extends Component {
   </div>
   </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-          {/* <div className="container">
-
-          <div className="row">
-    <div className="col">
-          <img src="https://i.imgur.com/c2oDdpm.jpg" alt="home" className="responsive" id="grey"></img>
-</div>
-    <div className="col">
-</div>
-      </div>
-      </div> */}
-      {/* <div className="container" id="buttonBox">
-        <Link to="/enter"><Button name="Create Character"/></Link>
-      </div>  */}
       </div>
     )
   }
