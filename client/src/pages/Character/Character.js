@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
 import "./Character.css";
-<<<<<<< HEAD:client/src/components/pages/Character/Character.js
 import axios from "axios";
-import StatsList from "../../StatsList/StatsList";
-=======
+import StatsList from "../../components/StatsList/StatsList";
 import stats from "../../data/player";
->>>>>>> origin:client/src/pages/Character/Character.js
 
 
 class Character extends Component {

@@ -18,7 +18,6 @@ const StatsList = (props) => {
                 <p>Experience to Next Level: {props.expToNextLvl}</p>
 
             </ul>
-            <Link to="/battle"><Button name={"Select"} style={"round-button-circle"} questComplete={props.boolean} /></Link>
         </div>
     )
 }

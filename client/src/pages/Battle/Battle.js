@@ -6,7 +6,7 @@ import player from "../../data/player";
 import monsters from "../../data/monsters";
 import Button from "../../components/Button/Button";
 import axios from 'axios';
-import FightBox from "../../components/TextBox/TextBox"
+import FightBox from "../../components/FightBox/FightBox"
 import "./Battle.css";
 
 class Battle extends Component {

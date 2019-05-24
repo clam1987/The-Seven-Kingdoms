@@ -7,33 +7,28 @@ import "./Stats.css";
 
 class Stats extends Component {
   state= {
-    stats: stats
+    stat: stats
   }
 
   render() {
-    const handleStat = this.state.stats.map((stat) =>
-    <StatsList
-    name={stat.name}
-    lvl={stat.lvl}
-    hp={stat.hp}
-    str={stat.str}
-    def={stat.def}
-    spd={stat.spd}
-    gold={stat.gold}
-    exp={stat.exp}
-    expToNextLvl={stat.expToNextLvl}
-  />
 
-
-
-    );
     return (
       //fill with stats stuff added button as placeholder
       <div className="Stats">
 <div className="jumbotron" style={{backgroundColor: "#1b0d0b"}}>
           <h1 className="displayChar">Stats</h1>
         {/* <h2 className="quote">A Lannister always pays his debts </h2>       */}
-          {handleStat}
+        <StatsList
+        name={this.state.stat.name}
+        lvl={this.state.stat.lvl}
+        hp={this.state.stat.hp}
+        str={this.state.stat.str}
+        def={this.state.stat.def}
+        spd={this.state.stat.spd}
+        gold={this.state.stat.gold}
+        exp={this.state.stat.exp}
+        expToNextLvl={this.state.stat.expToNextLvl}
+      />
 
         <Link to="/town"><Button name="Back to Town"/></Link>
       </div>
