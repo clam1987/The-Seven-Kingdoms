@@ -43,7 +43,6 @@ class Signup extends Component {
         <img src="https://www.dailydot.com/wp-content/uploads/2ca/4e/fa303666dcd14120.gif" alt="home2" className="responsive"></img>
 
         <div className="Signup">
-        <Button disabled={this.formInvalid()} callback={this.handleSubmit} name="Login" />
         <h1 className="ribbon">
    <strong class="ribbon-content">Create an account and Name your character!</strong>
 </h1>
