@@ -3,13 +3,15 @@ const mongoose = require("mongoose");
 
 let Schema = mongoose.Schema;
 
-let MonsterSchema = new Schema({
-        name: String,
-        hp: Number,
-        str: Number,
-        def: Number,
-        spd: Number,
-        gold: Number
+const MonsterSchema = new Schema({
+  name: String,
+  hp: Number,
+  str: Number,
+  def: Number,
+  spd: Number,
+  luk: Number,
+  exp: Number,
+  gold: Number
 });
 
 let Monster = mongoose.model("Monsters", MonsterSchema);
