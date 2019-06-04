@@ -6,22 +6,6 @@ const mongoose = require("mongoose");
 
 let Schema = mongoose.Schema;
 
-// let ItemSchema = new Schema({
-//   name: String,
-//   str: Number,
-//   def: Number,
-//   spd: Number,
-//   cost: Number,
-//   qty: Number
-// });
-
-// let QuestSchema = new Schema({
-//     name: String,
-//     description: String,
-//     boolean: false
-// });
-
-
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -90,7 +74,7 @@ const UserSchema = new Schema({
 
     q1: {
       type: Boolean,
-      default: true,
+      default: false,
     },
 
     q2: {

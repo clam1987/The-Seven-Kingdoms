@@ -16,7 +16,7 @@ const ItemSchema = new Schema({
   str: Number,
   def: Number,
   spd: Number,
-  qty: Number
+  qty: Number,
 });
 
 let Item = mongoose.model("Items", ItemSchema);
