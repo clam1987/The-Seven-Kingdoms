@@ -1,6 +1,7 @@
 const player = {
   id: "1",
   name: "Jon Snow",
+  lvl: 1,
   hp: 600,
   str: 10,
   def: 9,

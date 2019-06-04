@@ -3,10 +3,14 @@ const mongoose = require("mongoose");
 
 let Schema = mongoose.Schema;
 
-let QuestSchema = new Schema({
-        name: String,
-        description: String,
-        completed: false,
+const QuestSchema = new Schema({
+  name: String,
+  description: String,
+  rewards: [{
+    item: String,
+    gold: Number,
+    exp: Number
+  }]
 });
 
 let Quests = mongoose.model("Quests", QuestSchema);
