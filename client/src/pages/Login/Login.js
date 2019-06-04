@@ -1,50 +1,91 @@
 import React, { Component } from "react";
 import Button from "../../components/Button/Button";
-import axios from "axios";
-import { Link, Redirect} from "react-router-dom";
+// import axios from "axios";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions";
+import classnames from "classnames";
 import "./Login.css";
 
 class Login extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    errors: {}
   };
 
-  handleSubmit = () => {
-    axios
-      .post("/users/login", this.state)
-      .then(result => {
-        console.log(result);
-        if (result.status === 200){
-          this.props.setUserData(result.data, () => {
-            console.log(this.props)
-            return this.props.history.push("/protected/character")
-          })
-        } else {
-          console.log('ah shit here we go again')
-        }
-      })
-      .catch(err => {
-        if (err) throw err;
-      });
-  };
-
-  isLoggedIn = (req, res, next) => {
-    console.log("yes");
-    if (req.session.user !== undefined) {
-      next();
-    } else {
-      res.redirect("/login");
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/town");
     }
   }
 
-  handleChange = ({ target: { value, name } }) => {
-    this.setState({ [name]: value })
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/character"); // push user to dashboard when they login
+    }
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }
+
+  // Old Auth Submit
+  // handleSubmit = () => {
+  //   axios
+  //     .post("/users/login", this.state)
+  //     .then(result => {
+  //       console.log(result);
+  //       if (result.status === 200){
+  //         this.props.setUserData(result.data, () => {
+  //           console.log(this.props)
+  //           return this.props.history.push("/protected/character")
+  //         })
+  //       } else {
+  //         console.log('ah shit here we go again')
+  //       }
+  //     })
+  //     .catch(err => {
+  //       if (err) throw err;
+  //     });
+  // };
+
+  // isLoggedIn = (req, res, next) => {
+  //   console.log("yes");
+  //   if (req.session.user !== undefined) {
+  //     next();
+  //   } else {
+  //     res.redirect("/login");
+  //   }
+  // }
+  // Old Handle Change
+  // handleChange = ({ target: { value, name } }) => {
+  //   this.setState({ [name]: value })
+  // };
+
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
   };
+
+  onSubmit = e => {
+    e.preventDefault();
+
+    const userData = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+  };
+
 
   formInvalid = () => !(this.state.password && this.state.email);
 
   render() {
+       const { errors } = this.state;
     return (
       //STYLE IT UP!
       <div className="jumbotron" style={{ backgroundColor: "#1b0d0b" }}>
@@ -55,9 +96,60 @@ class Login extends Component {
           className="responsiveVh"
         />
 
-        <div className="Login">
+<form noValidate onSubmit={this.onSubmit}>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  error={errors.email}
+                  id="email"
+                  type="email"
+                  className={classnames("", {
+                    invalid: errors.email || errors.emailnotfound
+                  })}
+                />
+                <label htmlFor="email">Email</label>
+                <span className="red-text">
+                  {errors.email}
+                  {errors.emailnotfound}
+                </span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  error={errors.password}
+                  id="password"
+                  type="password"
+                  className={classnames("", {
+                    invalid: errors.password || errors.passwordincorrect
+                  })}
+                />
+                <label htmlFor="password">password</label>
+                <span className="red-text">
+                  {errors.password}
+                  {errors.passwordincorrect}
+                </span>
+                <div>
+                <button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-large btn-outline-warning"
+                >
+                  Log In
+                </button>
+                </div>
+              </div>
+            </form>
+
+        {/* <div className="Login"> */}
           {/* <h2 className="loginOne">LOGIN</h2> */}
-          <input
+          {/* <input
             type="text"
             value={this.state.email}
             onChange={this.handleChange}
@@ -80,20 +172,32 @@ class Login extends Component {
             disabled={this.formInvalid()}
             callback={this.handleSubmit}
             name="Login"
-          />
+          /> */}
           <h1 className="ribbon">
             <strong class="ribbon-content">
               No account yet? Click below to signup!
             </strong>
           </h1>
-          {/* <h3 className="loginTwo">No account yet? Click below to signup!</h3> */}
+          <h3 className="loginTwo">No account yet? Click below to signup!</h3>
           <Link to="/signup">
             <Button name="Create Account" />
-          </Link>
+           </Link>
         </div>
-      </div>
+      // </div>
     );
   }
 }
 
-export default Login;
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login);
