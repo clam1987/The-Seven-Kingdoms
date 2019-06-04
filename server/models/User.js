@@ -3,7 +3,6 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const mongoose = require("mongoose");
-// const Character = require("./Character");
 
 let Schema = mongoose.Schema;
 
@@ -22,17 +21,6 @@ let Schema = mongoose.Schema;
 //     boolean: false
 // });
 
-// let CharacterSchema = new Schema({
-//     name: String,
-//     hp: Number,
-//     str: Number,
-//     def: Number,
-//     spd: Number,
-//     lck: Number,
-//     gold: Number,
-    // quest: [QuestSchema],
-    // item: [ItemSchema]
-// });
 
 const UserSchema = new Schema({
   name: {
@@ -51,7 +39,95 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  character: [{type: Schema.Types.ObjectId, ref: "Characters"}]
+  
+  lvl: {
+    type: Number,
+    default: 1
+  },
+  
+  
+    hp: {
+      type: Number,
+      default: 0
+    },
+    
+    str: {
+      type: Number,
+      default: 0
+    },
+
+    def: {
+      type: Number,
+      default: 0
+    },
+
+    spd: {
+      type: Number,
+      default: 0
+    },
+
+    luk: {
+      type: Number,
+      default: 0
+    },
+
+    gold: {
+      type: Number,
+      default: 0
+    },
+
+    exp: {
+      type: Number,
+      default: 0
+    },
+
+    expToNext: {
+      type: Number,
+      default: 1000
+    },
+
+    inv: [],
+
+    q1: {
+      type: Boolean,
+      default: true,
+    },
+
+    q2: {
+      type: Boolean,
+      default: false,
+    },
+
+    q3: {
+      type: Boolean,
+      default: false,
+    },
+
+    q4: {
+      type: Boolean,
+      default: false,
+    },
+
+    q5: {
+      type: Boolean,
+      default: false,
+    },
+
+    q6: {
+      type: Boolean,
+      default: false,
+    },
+
+    q7: {
+      type: Boolean,
+      default: false,
+    },
+
+    q8: {
+      type: Boolean,
+      default: false,
+    }
+
 });
 
 const User = mongoose.model("User", UserSchema);
