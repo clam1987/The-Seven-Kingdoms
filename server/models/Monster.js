@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
 const MonsterSchema = new Schema({
+  monID: {
+    type: Number,
+    unique: true
+  },
   name: String,
   hp: Number,
   str: Number,

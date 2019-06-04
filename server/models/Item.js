@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
 const ItemSchema = new Schema({
+  itemID: {
+    type: Number,
+    unique: true
+  },
   name: String,
   info: String,
   type: String,

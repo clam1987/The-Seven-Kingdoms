@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
 const QuestSchema = new Schema({
+  questID: {
+    type: Number,
+    unique: true
+  },
   name: String,
   description: String,
   rewards: [{
