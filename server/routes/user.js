@@ -39,16 +39,15 @@ router.post("/login", (req, res, next) => {
 });
 
 
-
-
-router.get("/login", (req, res, next) => {
-  res.send("success");
+// Get User Route
+router.get('/:id', function (req, res) {
+  User.findById(req.params.id, function (err, user) {
+    console.log(user)
+      if (err) return res.status(500).send("There was a problem finding the user.");
+      if (!user) return res.status(404).send("No user found.");
+      res.status(200).send(user);
+  });
 });
-
-router.get("/notlogin", (req, res) => {
-  res.status(400).send("not logged in")
-});
-
 
 // Post Routes
 // SignUp Hanlder
@@ -154,15 +153,6 @@ router.post("/signup", (req, res) => {
     }
   });
   
-// GETS A SINGLE USER FROM THE DATABASE
-router.get('/:id', function (req, res) {
-  User.findById(req.params.id, function (err, user) {
-    console.log(user)
-      if (err) return res.status(500).send("There was a problem finding the user.");
-      if (!user) return res.status(404).send("No user found.");
-      res.status(200).send(user);
-  });
-});
 
   router.put("/character/:id", (req, res) => {
     User.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, user) => {
@@ -172,10 +162,10 @@ router.get('/:id', function (req, res) {
     })
   }); 
 
-  router.delete("/delete/:id", (req, res) => {
+  router.delete("/delete/character/:id", (req, res) => {
     User.findByIdAndDelete(req.params.id, (err, user) => {
       console.log(req.body);
-        if (err) return res.status(500).send("There was a problem updating your Character");
+        if (err) return res.status(500).send("There was a problem deleting your Character");
         res.status(200).send(user);
     })
   }); 
