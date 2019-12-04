@@ -2,7 +2,7 @@ import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 
-import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
+import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING, HAS_CHARACTER } from "./types";
 
 // Register Users
 export const registerUser = (userData, history) => dispatch => {
@@ -42,6 +42,19 @@ export const loginUser = userData => dispatch => {
     );
 };
 
+// Post User Character
+export const createUserCharacter = (characterData, history) => dispatch => {
+  axios
+  .put("/users/character/:id", characterData)
+    .then(res => history.push("town/")) // re-direct to town
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      }) 
+    )
+};
+
 // Set logged in user
 export const setCurrentUser = decoded => {
   return {
@@ -55,6 +68,14 @@ export const setUserLoading = () => {
     type: USER_LOADING
   };
 };
+
+// Set User Character
+export const setUserCharacter = () => {
+  return {
+    type: HAS_CHARACTER
+  }
+};
+
 // Log user out
 export const logoutUser = () => dispatch => {
   // Remove token from local storage

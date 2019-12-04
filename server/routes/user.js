@@ -10,24 +10,22 @@ const connection = require("../config/connection");
 const validateRegisterInput = require("../controllers/register");
 const validateLoginInput = require("../controllers/login");
 
-
 //User Model
 const User = require("../models/User");
 
 //Routers
-router.use(express.urlencoded({ extended: true }))
-
+router.use(express.urlencoded({ extended: true }));
 
 // Get User Route
-router.get('/users/:id', function (req, res) {
-  User.findById(req.params.id, function (err, user) {
-    console.log(user)
-      if (err) return res.status(500).send("There was a problem finding the user.");
-      if (!user) return res.status(404).send("No user found.");
-      res.status(200).send(user);
+router.get("/users/:id", function(req, res) {
+  User.findById(req.params.id, function(err, user) {
+    console.log(user);
+    if (err)
+      return res.status(500).send("There was a problem finding the user.");
+    if (!user) return res.status(404).send("No user found.");
+    res.status(200).send(user);
   });
 });
-
 
 // Register Account Route
 router.post("/account/signup", (req, res) => {
@@ -115,33 +113,41 @@ router.post("/account/login", (req, res) => {
     });
   });
 });
-  
 
-  router.put("/character/:id", (req, res) => {
-    User.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, user) => {
+router.put("/character/:id", (req, res) => {
+  User.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, user) => {
       // console.log(req.body);
-        if (err) return res.status(500).send("There was a problem updating your Character");
-        res.status(200).send(user);
-    })
-  }); 
+      if (err)
+        return res
+          .status(500)
+          .send("There was a problem updating your Character");
+      res.status(200).send(user);
+    }
+  );
+});
 
-  router.delete("/delete/character/:id", (req, res) => {
-    User.findByIdAndDelete(req.params.id, (err, user) => {
-      // console.log(req.body);
-        if (err) return res.status(500).send("There was a problem deleting your Character");
-        res.status(200).send(user);
-    })
-  }); 
+router.delete("/delete/character/:id", (req, res) => {
+  User.findByIdAndDelete(req.params.id, (err, user) => {
+    // console.log(req.body);
+    if (err)
+      return res
+        .status(500)
+        .send("There was a problem deleting your Character");
+    res.status(200).send(user);
+  });
+});
 
+// router.use(require('../config/auth'));
 
-  // router.use(require('../config/auth'));
-  
-  // Logout Handle
-  // router.get("/logout", (req, res) => {
-  //   req.logout();
-  //   req.flash("sucess_msg", "You logged out sucessfully");
-  //   // res.redirect("/users/login");
-  // })
-  
-  module.exports = router;
-  
+// Logout Handle
+// router.get("/logout", (req, res) => {
+//   req.logout();
+//   req.flash("sucess_msg", "You logged out sucessfully");
+//   // res.redirect("/users/login");
+// })
+
+module.exports = router;

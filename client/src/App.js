@@ -64,7 +64,7 @@ class App extends Component {
       <Provider store={store}>
       <Router>
         <div className="App">
-          <Nav />
+          {/* <Nav /> */}
           {/* <Route exact path="/" render= {(props) => this.state.user ? <Character {...props} /> : <Login {...props} setUserData={this.setUserData} />} /> */}
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={Signup} />

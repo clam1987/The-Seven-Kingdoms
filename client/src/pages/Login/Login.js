@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import "./Login.css";
+import { relative } from "path";
 
 class Login extends Component {
   state = {
@@ -24,7 +25,10 @@ class Login extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/character"); // push user to dashboard when they login
+      this.props.history.push("/character"); // push user to character when they login
+    } 
+    else if (nextProps.auth.isAuthenticated && nextProps.auth.hasCharacter) {
+      this.props.history.push("/town"); // push user to town if they are logged in and have a character.
     }
     if (nextProps.errors) {
       this.setState({
@@ -97,7 +101,7 @@ class Login extends Component {
         />
 
 <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+              <div className="form-group">
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -114,7 +118,7 @@ class Login extends Component {
                   {errors.emailnotfound}
                 </span>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group">
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -124,8 +128,9 @@ class Login extends Component {
                   className={classnames("", {
                     invalid: errors.password || errors.passwordincorrect
                   })}
+                  style={{ position: "relative", right: "-28px"}}
                 />
-                <label htmlFor="password">password</label>
+                <label htmlFor="password"  style={{ position: "relative", right: "-28px"}}>Password</label>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}

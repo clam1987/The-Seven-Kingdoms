@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import Button from "../../components/Button/Button"
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions";
 import "./Character.css";
+import classnames from "classnames";
 import stats from "../../data/player";
 import axios from "axios";
 
@@ -18,29 +22,34 @@ class Character extends Component {
     user: ""
   }
 
-  handleSubmit = () => {
-    axios
-      .post("/users/login/character", this.state)
-      .then(res => {
-        console.log(res)
-      .catch(err => {
-        if (err) throw err;
-      });
-  })
-};
+  // componentDidMount() {
+  //   if (this.props.auth.hasCharacter) {
+  //     this.props.history.push("/town");
+  //   }
+  // }
+//   handleSubmit = () => {
+//     axios
+//       .post("/users/login/character", this.state)
+//       .then(res => {
+//         console.log(res)
+//       .catch(err => {
+//         if (err) throw err;
+//       });
+//   })
+// };
 
-handleStats = (name, hp, str, def, spd, luk, gold) => {
-  this.setState( () => {
-    return {
-      hp: hp,
-      str: str,
-      def: def,
-      spd: spd,
-      luk: luk,
-      gold: gold
-    }
-  })
-};
+// handleStats = (name, hp, str, def, spd, luk, gold) => {
+//   this.setState( () => {
+//     return {
+//       hp: hp,
+//       str: str,
+//       def: def,
+//       spd: spd,
+//       luk: luk,
+//       gold: gold
+//     }
+//   })
+// };
 
 
 
@@ -71,7 +80,9 @@ handleStats = (name, hp, str, def, spd, luk, gold) => {
                 <li>Gold: 100</li>
             </ul>
         <p>
-        <Link to="/enter"><Button name="Select Character" callback={() => {this.handleStats("Jon Snow", 1000, 11, 11, 8, 7, 100)}}/></Link>
+    <Link to="/enter"><Button name="Select Character" 
+    // callback={() => {this.handleStats("Jon Snow", 1000, 11, 11, 8, 7, 100)}}
+    /></Link>
         </p>
       </div>
     </div>

@@ -101,7 +101,7 @@ class Signup extends Component {
 
 
 <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+              <div className="form-group">
                 <input
                   onChange={this.onChange}
                   value={this.state.name}
@@ -111,12 +111,13 @@ class Signup extends Component {
                   className={classnames("", {
                     invalid: errors.name
                   })}
+                  style={{ position: "relative", right: "-28px"}}
                 />
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name" style={{ position: "relative", right: "-28px"}}>Name</label>
                 <span className="red-text">{errors.name}</span>
               </div>
 
-              <div className="input-field col s12">
+              <div className="form-group">
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -126,12 +127,13 @@ class Signup extends Component {
                   className={classnames("", {
                     invalid: errors.email
                   })}
+                  style={{ position: "relative", right: "-25px"}}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email"  style={{ position: "relative", right: "-26px"}}>Email</label>
                 <span className="red-text">{errors.email}</span>
               </div>
 
-              <div className="input-field col s12">
+              <div className="form-group">
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -141,12 +143,13 @@ class Signup extends Component {
                   className={classnames("", {
                     invalid: errors.password
                   })}
+                  style={{ position: "relative", right: "-54px"}}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password"  style={{ position: "relative", right: "-54px"}}>Password</label>
                 <span className="red-text">{errors.password}</span>
               </div>
 
-              <div className="input-field col s12">
+              <div className="form-group">
                 <input
                   onChange={this.onChange}
                   value={this.state.password2}
@@ -156,8 +159,9 @@ class Signup extends Component {
                   className={classnames("", {
                     invalid: errors.password2
                   })}
+                  style={{ position: "relative", right: "-111px"}}
                 />
-                <label htmlFor="password2">Confirm Password</label>
+                <label htmlFor="password2" style={{ position: "relative", right: "-112px"}}>Confirm Password</label>
                 <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
